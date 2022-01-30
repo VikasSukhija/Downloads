@@ -1,0 +1,1 @@
+<iframe width="1024px" height="768px" src="https://web.powerapps.com/webplayer/iframeapp?hideNavBar=true&source=iframe&screenColor=rgba(104,101,171,1)&appId=/providers/Microsoft.PowerApps/apps/0b4445b9-6e3b-45c5-834-2e944444ba7" />
