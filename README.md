@@ -152,4 +152,18 @@
 <li><a href="https://techwizard.cloud/2014/06/05/monitoring-event-id-thru-powershell/" target="_blank" rel="noopener">Monitoring Event id thru Powershell</a></li>
 <li><a href="https://techwizard.cloud/2016/06/20/export-sharepoint-list-to-csv/" target="_blank" rel="noopener">Export Sharepoint List to CSV</a></li>
 <li><a href="https://techwizard.cloud/2022/01/29/password-expiry-email-alert-counter-days-left/" target="_blank" rel="noopener">Password Expiry Email Alert Counter Days Left</a></li>
+<li><a href="https://techwizard.cloud/2022/03/05/multi-geo-move-scripts/" target="_blank" rel="noopener">Multi Geo Move Scripts</a></li>
+<li><a href="https://techwizard.cloud/2022/04/10/powershell-export-import-scheduled-tasks/" target="_blank" rel="noopener">PowerShell &ndash; Export Import Scheduled Tasks</a></li>
+<li><a href="https://techwizard.cloud/2013/05/07/exchange-2007-modify-accept-messages-only-from-for-distribution-list/" target="_blank" rel="noopener">&ldquo;Modify Accept Messages only from&rdquo; for Distribution List</a></li>
+<li><a href="https://techwizard.cloud/2013/08/18/creating-sharepoint-dashboard-using-chart-webpart/" target="_blank" rel="noopener">Creating SharePoint Dashboard using Chart WebPart</a></li>
+<li><a href="https://techwizard.cloud/2015/04/16/lync-2010-health-check/" target="_blank" rel="noopener">Lync 2010 Health Check</a></li>
+<li><a href="https://techwizard.cloud/2014/08/25/convert-structured-text-to-csv-format/" target="_blank" rel="noopener">Convert Structured TEXT to CSV format</a></li>
+<li><a href="https://techwizard.cloud/2013/10/14/exchange-gal-error-analysis-eventid-9325/" target="_blank" rel="noopener">Exchange GAL error Analysis &ndash; Eventid 9325</a></li>
+<li><a href="https://techwizard.cloud/2013/10/14/exchange-gal-error-analysis-eventid-9325/" target="_blank" rel="noopener">Exchange 2010 w3wp process High CPU utilization</a></li>
+<li><a href="https://techwizard.cloud/2014/09/09/exchange-dag-backup-reporting/" target="_blank" rel="noopener">Exchange DAG Backup Reporting</a></li>
+<li><a href="https://techwizard.cloud/2014/08/10/sharepoint-content-database-size-report/" target="_blank" rel="noopener">Sharepoint Content Database Size Report</a></li>
+<li><a href="https://techwizard.cloud/2015/07/11/iis-apppool-monitoring-using-powershell-psexec/" target="_blank" rel="noopener">IIS APPPool Monitoring Using PowerShell &amp; PSEXEC</a></li>
+<li><a href="https://techwizard.cloud/2016/01/04/sharepoint-item-level-permissions/" target="_blank" rel="noopener">SharePoint Item Level Permissions</a></li>
+<li><a href="https://techwizard.cloud/2016/08/15/office-365-users-service-usage-report/" target="_blank" rel="noopener">Office 365 Users Service Usage Report</a></li>
+<li><a href="https://techwizard.cloud/2015/09/04/room-mailboxes-calendar-permissions-report/" target="_blank" rel="noopener">Room Mailboxes Calendar Permissions Report</a></li>
 </ul>
