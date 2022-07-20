@@ -1,48 +1,45 @@
+
 <#PSScriptInfo
 
-    .VERSION 1.0
+.VERSION 2.0
 
-    .GUID ceb902ed-8bd8-4f3c-9c99-b1d894dda877
+.GUID be53af09-7831-40cc-92a2-0a72b3fa7c1b
 
-    .AUTHOR Vikas Sukhija
+.AUTHOR Vikas Sukhija
 
-    .COMPANYNAME TechWizard.cloud
+.COMPANYNAME Techwizard.cloud
 
-    .COPYRIGHT Vikas Sukhija
+.COPYRIGHT Techwizard.cloud
 
-    .TAGS
+.TAGS
 
-    .LICENSEURI
+.LICENSEURI https://techwizard.cloud/2021/05/31/available-team-numbers-report/
 
-    .PROJECTURI
+.PROJECTURI https://techwizard.cloud/2021/05/31/available-team-numbers-report/
 
-    .ICONURI
+.ICONURI
 
-    .EXTERNALMODULEDEPENDENCIES 
+.EXTERNALMODULEDEPENDENCIES MicrosoftTeams 
 
-    .REQUIREDSCRIPTS
+.REQUIREDSCRIPTS
 
-    .EXTERNALSCRIPTDEPENDENCIES
+.EXTERNALSCRIPTDEPENDENCIES
 
-    .RELEASENOTES
+.RELEASENOTES
+https://techwizard.cloud/2021/05/31/available-team-numbers-report/
 
-    .PRIVATEDATA
-
-    .NOTES
-    ===========================================================================
-    Created with: 	ISE
-    Created on:   	5/19/2021 9:00 AM
-    Created by:   	Vikas Sukhija
-    Organization: 	
-    Filename:     	AvailableTeamNumbersReport.ps1
-    ===========================================================================
+.PRIVATEDATA
 
 #>
+
+#Requires -Module MicrosoftTeams
+
 <# 
 
-    .DESCRIPTION 
-    This will report the available phone numbers in Microsoft Teams
-#> 
+.DESCRIPTION 
+ This will report the available phone numbers in Microsoft Teams 
+
+#>
 param (
   [string]$smtpserver,
   [string]$erroremail,
@@ -144,11 +141,11 @@ catch
 
 try
 {
-  $allnumbers = Get-CsOnlineTelephoneNumber -ResultSize 100000 | Select Id, ActivationState, CityCode,O365Region,InventoryType, TargetType, PortInOrderStatus
+  $allnumbers =Get-CsPhoneNumberAssignment -Top 100000 | Select TelephoneNumber,NumberType,ActivationState,City,IsoCountryCode,IsoSubdivision,PortInOrderStatus,PstnAssignmentStatus,PstnPartnerName
   Write-Log -message "Fetched Phonenumbers $($allnumbers.count) from Teams" -path $log
-  $allassignednumbers = $allnumbers  | where{$_.TargetType -ne $null}
+  $allassignednumbers = $allnumbers  | where{$_.PstnAssignmentStatus -ne 'Unassigned'}
   Write-Log -message "Fetched Assigned Phonenumbers $($allassignednumbers.count) from Teams" -path $log
-  $allunassignednumbers = $allnumbers  | where{$_.TargetType -eq $null}
+  $allunassignednumbers = $allnumbers  | where{$_.PstnAssignmentStatus -eq 'Unassigned'}
   Write-Log -message "Fetched unAssigned Phonenumbers $($allunassignednumbers.count) from Teams" -path $log
   $getllcsonlineusernumbers = Get-CsOnlineUser -Filter {LineURI -ne $null} | Select UserprincipalName, LineURI
   Write-Log -message "Fetched all assigned users $($getllcsonlineusernumbers.count) from Teams" -path $log
@@ -172,17 +169,19 @@ Write-Log -Message "Start exporting Report" -path $log
 [System.Collections.ArrayList]$collection = @()
 ForEach($voicenumber in $allnumbers) 
 {
-  $mcoll = "" | Select-Object Id, ActivationState, CityCode,O365Region,InventoryType, TargetType, PortInOrderStatus
-  $mcoll.ID = $voicenumber.Id
+  $mcoll = "" | Select-Object TelephoneNumber,TargetType,NumberType, ActivationState, City,IsoCountryCode,IsoSubdivision,PortInOrderStatus, PstnAssignmentStatus,PstnPartnerName
+  $mcoll.TelephoneNumber = $voicenumber.TelephoneNumber
+  $mcoll.NumberType = $voicenumber.NumberType
   $mcoll.ActivationState = $voicenumber.ActivationState
-  $mcoll.CityCode = $voicenumber.CityCode
-  $mcoll.O365Region = $voicenumber.O365Region
-  $mcoll.InventoryType = $voicenumber.InventoryType
+  $mcoll.City = $voicenumber.City
+  $mcoll.IsoCountryCode = $voicenumber.IsoCountryCode
+  $mcoll.IsoSubdivision = $voicenumber.IsoSubdivision
   $mcoll.PortInOrderStatus = $voicenumber.PortInOrderStatus
-  if($voicenumber.TargetType -eq "user")
-  {
+  $mcoll.PstnAssignmentStatus = $voicenumber.PstnAssignmentStatus
+  $mcoll.PstnPartnerName = $voicenumber.PstnPartnerName
+  if($voicenumber.PstnAssignmentStatus -eq "UserAssigned"){
     $lineuri = $assigneduser = $null
-    $lineuri = "tel:+" + $voicenumber.Id
+    $lineuri = "tel:" + $voicenumber.TelephoneNumber
     $assigneduser = $getllcsonlineusernumbers | where{$_.LineURI -eq $lineuri} | select userprincipalname
     $mcoll.TargetType = $assigneduser.userprincipalname
   }
