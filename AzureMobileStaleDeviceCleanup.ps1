@@ -1,20 +1,21 @@
-﻿<#PSScriptInfo
+﻿
+<#PSScriptInfo
 
 .VERSION 1.0
 
-.GUID f0d629e8-15ff-4652-a613-407a4e1c54a0
+.GUID fa3e9d31-cb92-47d7-9992-d1937a15e622
 
 .AUTHOR Vikas Sukhija
 
-.COMPANYNAME TechWizard.cloud
+.COMPANYNAME Techwizard.cloud
 
-.COPYRIGHT
+.COPYRIGHT Techwizard.cloud
 
 .TAGS
 
 .LICENSEURI
 
-.PROJECTURI TechWizard.cloud
+.PROJECTURI
 
 .ICONURI
 
@@ -24,14 +25,21 @@
 
 .EXTERNALSCRIPTDEPENDENCIES
 
-.RELEASENOTES 
+.RELEASENOTES
 
 
 .PRIVATEDATA
 
 #>
+
+<# 
+
+.DESCRIPTION 
+ AzureMobileStaleDeviceCleanup 
+
+#> 
 <#	
-    .NOTES
+    .Notes
     ===========================================================================
     Created with: 	ISE
     Created on:   	9/26/2022 1:46 PM
@@ -108,13 +116,18 @@ Write-Log -message "Collect all azure mobile devices" -path $log
 $allAzureDevices = Get-AzureADDevice -All:$true | Where{$MobileOS -contains $_.DeviceOSType }
 Write-Log -message "Azure mobile devices - $($allAzureDevices.Count)" -path $log
 #Captures stale device records into collection that will be disabled
+if($Operation -eq 'DisableAndRemove' -or $Operation -eq 'Report' -or $Operation -eq 'Remove'){
 $DisableDevices = $allAzureDevices | Where-Object {($_.ApproximateLastLogonTimeStamp -le $DisableThreshold -and $_.ApproximateLastLogonTimeStamp -gt $DeleteThreshold)}
+}
+if($Operation -eq 'Disable'){
+$DisableDevices = $allAzureDevices | Where-Object {($_.ApproximateLastLogonTimeStamp -le $DisableThreshold)}
+}
 Write-Log -message "Azure mobile Disable devices - $($DisableDevices.Count)" -path $log
 $DisableDevices | Select -Property AccountEnabled, DeviceId, DeviceOSType, DeviceOSVersion, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | Export-Csv $report1 -NoTypeInformation
 Send-MailMessage -SmtpServer $smtpserver -From $from -To $erroremail -Subject "Report - AzureMobileStaleDeviceCleanup - Disable $LastActivityDisableDays" -Attachments $report1
 
 #Captures stale device records into collection that will be deleted
-$DeleteDevices = $allAzureDevices  | Where-Object {($_.ApproximateLastLogonTimeStamp -le $DeleteThreshold) -and ($MobileOS -contains $_.DeviceOSType )}
+$DeleteDevices = $allAzureDevices  | Where-Object {($_.ApproximateLastLogonTimeStamp -le $DeleteThreshold)}
 Write-Log -message "Azure mobile Delete devices - $($DeleteDevices.Count)" -path $log
 $DeleteDevices | Select -Property AccountEnabled, DeviceId, DeviceOSType, DeviceOSVersion, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | Export-Csv $report2 -NoTypeInformation
 Send-MailMessage -SmtpServer $smtpserver -From $from -To $erroremail -Subject "Report - AzureMobileStaleDeviceCleanup - Remove $LastActivityDeleteDays" -Attachments $report2
