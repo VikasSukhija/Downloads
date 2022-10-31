@@ -151,7 +151,7 @@ catch
   Write-Log -Message $exception -path $log -Severity error
   Exit
 }
-###########Remove these devices from Intune#################
+#################export report###################################
 $count=0
 $getalldevices |
 ForEach-Object{
