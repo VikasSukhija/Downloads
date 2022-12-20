@@ -24,7 +24,7 @@
 
 .EXTERNALSCRIPTDEPENDENCIES
 
-.RELEASENOTES https://techwizard.cloud/2021/05/04/active-directory-health-check-v2/
+.RELEASENOTES https://techwizard.cloud/
 
 
 .PRIVATEDATA
