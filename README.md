@@ -166,4 +166,15 @@
 <li><a href="https://techwizard.cloud/2016/01/04/sharepoint-item-level-permissions/" target="_blank" rel="noopener">SharePoint Item Level Permissions</a></li>
 <li><a href="https://techwizard.cloud/2016/08/15/office-365-users-service-usage-report/" target="_blank" rel="noopener">Office 365 Users Service Usage Report</a></li>
 <li><a href="https://techwizard.cloud/2015/09/04/room-mailboxes-calendar-permissions-report/" target="_blank" rel="noopener">Room Mailboxes Calendar Permissions Report</a></li>
+<li><a href="https://techwizard.cloud/2022/06/30/powershell-download-file-from-sharepoint-document-library/" target="_blank" rel="noopener">PowerShell – Download File from SharePoint Document Library</a></li>
+<li><a href="https://techwizard.cloud/2022/08/08/azurekeyvault-synchronize-secrets-to-local-server/" target="_blank" rel="noopener">AzureKeyVault – Synchronize Secrets to Local Server</a></li>
+<li><a href="https://techwizard.cloud/2022/07/26/automate-disable-self-service-purchase-option-office-365-products/" target="_blank" rel="noopener">Automate Disable Self-Service Purchase option Office 365 Products</a></li>
+<li><a href="https://techwizard.cloud/2022/07/21/powershell-available-team-numbers-report-v2/" target="_blank" rel="noopener">PowerShell – Available Team Numbers Report V2</a></li>
+<li><a href="https://techwizard.cloud/2022/08/31/fetch-monthly-count-of-sharepoint-list-requests/" target="_blank" rel="noopener">Fetch Monthly Count of SharePoint List Requests</a></li>
+<li><a href="https://techwizard.cloud/2022/10/08/azuread-stale-devices-cleanup/" target="_blank" rel="noopener">AzureAD Stale Devices Cleanup</a></li>
+<li><a href="https://techwizard.cloud/2022/11/06/monitor-powerautomate-flows-for-failures/" target="_blank" rel="noopener">Monitor PowerAutomate Flows for Failures</a></li>
+<li><a href="https://techwizard.cloud/2022/11/12/python-connect-sftp-and-upload-files/" target="_blank" rel="noopener">Python – Connect SFTP and Upload files</a></li>
+<li><a href="https://techwizard.cloud/2022/12/20/monitor-scheduled-task-failures/" target="_blank" rel="noopener">Monitor Scheduled Task Failures</a></li>
+<li><a href="https://techwizard.cloud/2022/12/30/powershell-download-excel-from-sharepoint-and-export-to-servicenow-tables/" target="_blank" rel="noopener">PowerShell – Download Excel from SharePoint and Export to ServiceNow Tables</a></li>
+<li><a href="https://techwizard.cloud/2023/01/28/python-remove-specific-ad-groups-from-target-users/" target="_blank" rel="noopener">Python – Remove Specific AD groups From Target Users</a></li>
 </ul>
