@@ -1,8 +1,8 @@
 <#PSScriptInfo
 
-.VERSION 1.0
+.VERSION 1.1
 
-.GUID 5bbe6009-817a-49f5-afb0-c9e328e49131
+.GUID ff5e9b3e-3968-4876-95ac-f23adbbb37ba
 
 .AUTHOR Vikas Sukhija
 
@@ -51,7 +51,7 @@ $Report = Write-Log -Name "Report-printersreport" -folder "Report" -Ext "csv"
 #######################get report based on days#########################
 Write-Log -Message "Start....................Script" -path $log
 try{
-  $printers = Get-ADObject -LDAPFilter "(objectCategory=printQueue)" -Properties cn, drivername, location, printername, portname, servername | select portname, cn, drivername, location, printername, servername 
+  $printers = Get-ADObject -LDAPFilter "(objectCategory=printQueue)" -Properties cn, drivername, location, printername, portname, servername | select cn, drivername, location, printername, servername, @{n="portname";e={$_.Portname}}
   Write-Log -Message "Fetched all printers - $($printers.count)" -path $log
   $printers | Export-Csv $Report -NoTypeInformation
   Write-Log -Message "Exported report to CSV" -path $log
