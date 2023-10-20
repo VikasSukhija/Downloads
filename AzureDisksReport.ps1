@@ -44,6 +44,7 @@
     This will generate Azure Disks report across the organization
 
 #> 
+param()
 #################logs and variables##########################
 $log = Write-Log -Name "CloudAzureDisks" -folder "logs" -Ext "log"
 $Report = Write-Log -Name "CloudAzureDisks" -folder "Report" -Ext "csv"
