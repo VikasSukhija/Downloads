@@ -1,8 +1,8 @@
 <#PSScriptInfo
 
-    .VERSION 1.0
+    .VERSION 1.1
 
-    .GUID ee0b85af-6a71-4ebd-ad3c-908c3a11ca36
+    .GUID dc22c40e-7215-4a39-b66a-423a730775a2
 
     .AUTHOR Vikas Sukhija
 
@@ -220,7 +220,6 @@ foreach($awsAccount in $allawsaccounts)
 
 $collinventory | Export-Csv $Report -NoTypeInformation
 Send-MailMessage -SmtpServer $smtpserver -From $from -To $email1 -bcc $erroremail -Subject "AWS EC2 Instance Inventory Report" -Attachments $Report
-Move-Item -Path $report -Destination $hitoricalreports -Force
 ###############################Recycle logs ###############################################
 Set-Recyclelogs -foldername "logs" -limit $logrecyclelimit -Confirm:$false
 Set-Recyclelogs -foldername "Report" -limit $logrecyclelimit -Confirm:$false
