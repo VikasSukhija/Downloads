@@ -177,4 +177,18 @@
 <li><a href="https://techwizard.cloud/2022/12/20/monitor-scheduled-task-failures/" target="_blank" rel="noopener">Monitor Scheduled Task Failures</a></li>
 <li><a href="https://techwizard.cloud/2022/12/30/powershell-download-excel-from-sharepoint-and-export-to-servicenow-tables/" target="_blank" rel="noopener">PowerShell – Download Excel from SharePoint and Export to ServiceNow Tables</a></li>
 <li><a href="https://techwizard.cloud/2023/01/28/python-remove-specific-ad-groups-from-target-users/" target="_blank" rel="noopener">Python – Remove Specific AD groups From Target Users</a></li>
+<li><a href="https://techwizard.cloud/2023/05/06/bulk-update-primary-user-for-intune-devices/" target="_blank" rel="noopener">Bulk Update Primary User for Intune Devices</a></li>
+<li><a href="https://techwizard.cloud/2023/05/19/powershell-azure-ad-user-last-login-report/" target="_blank" rel="noopener">PowerShell – Azure AD User last login Report</a></li>
+<li>&nbsp;<a href="https://techwizard.cloud/2023/05/31/python-azure-ad-user-last-login-report/" target="_blank" rel="noreferrer noopener">Python – Azure AD User last login Report</a></li>
+<li><a href="https://techwizard.cloud/2023/06/19/active-directory-printer-inventory-report/">Active Directory Printer Inventory Report</a></li>
+<li><a href="https://techwizard.cloud/2023/07/25/python-reading-sharepoint-list-delegated-application-permissions/">Python – Reading SharePoint List Delegated Application Permissions</a></li>
+<li><a href="https://techwizard.cloud/2023/09/06/sync-azure-active-directory-group-to-on-premises-active-directory/">Sync Azure active directory group to On-premises Active Directory</a></li>
+<li><a href="https://techwizard.cloud/2023/09/16/powershell-report-on-azure-sql-servers-in-organization/" target="_blank" rel="noreferrer noopener">PowerShell – Report on AZURE SQL Servers in Organization</a></li>
+<li><a href="https://techwizard.cloud/2023/09/27/read-sharepoint-list-to-add-and-remove-members-from-ad-group/" target="_blank" rel="noreferrer noopener">Read SharePoint List to ADD and Remove members from AD Group</a></li>
+<li><a href="https://techwizard.cloud/2023/10/20/powershell-report-on-azure-disks-across-organization/" target="_blank" rel="noreferrer noopener">PowerShell – Report on Azure Disks across Organization</a></li>
+<li><a href="https://techwizard.cloud/2023/11/02/alert-duplicate-objects-in-ad-created-by-replication-conflict/">Alert – Duplicate Objects in AD Created by Replication Conflict</a></li>
+<li><a href="https://techwizard.cloud/2023/11/22/powershell-report-on-azure-storage-account-usage-in-organization/">PowerShell – Report on AZURE Storage Account Usage in Organization</a></li>
+<li><a href="https://techwizard.cloud/2023/11/27/aws-ec2-inventory-report-across-organization/">AWS – EC2 inventory Report across Organization</a></li>
+<li><a href="https://techwizard.cloud/2023/12/11/ad-ou-creation-and-deletion-alert/">AD OU Creation and Deletion Alert</a></li>
+<li><a href="https://techwizard.cloud/2023/12/20/powershell-sync-csv-to-sharepoint-list/">PowerShell – Sync CSV to SharePoint List</a></li>
 </ul>
